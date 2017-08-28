@@ -17,6 +17,13 @@ import java.util.Scanner;
  */
 public class Util {
     
+    /** 
+     * Método para leitura de número inteiros
+     * @param mensagem
+     * @return mensagem de resultado da operação
+     * @throws Exception 
+     */
+    
     public static int leInteiro(String mensagem) throws Exception {
         int x = 0;
         try {
@@ -29,6 +36,12 @@ public class Util {
         return x;
     }
     
+    /** 
+     * Método para leitura de Strings
+     * @param mensagem
+     * @return mensagem de resultado da operação
+     */
+    
     public static String leString(String mensagem) {
         String x;
         
@@ -40,7 +53,7 @@ public class Util {
     }
 
     /**
-     *
+     * Método de Leitura de Datas
      * @param mensagem
      * @return a data em formato LocalDate
      * @throws java.lang.Exception caso a data não respeite o formato
