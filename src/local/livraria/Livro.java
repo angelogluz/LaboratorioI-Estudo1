@@ -1,23 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package local.livraria;
 
 import java.util.Arrays;
 
 /**
+ * Classe Livro
  *
- * @author angelodaluz
+ * @author Angelo da Luz
  */
 public class Livro {
 
-    private String titulo;
-    private Capitulo[] capitulos;
-    private Autor[] autores;
-    private String ISBN;
+    private String titulo; // título do livro
+    private Capitulo[] capitulos; // lista de capítulos do livro
+    private Autor[] autores; // lista de autores do livro
+    private String ISBN; // ISBN do livro
 
+    /**
+     * Construtor constrói livro com dados recebidos e aloca espaço para vetores
+     *
+     * @param titulo String título do livro
+     * @param ISBN String ISBN do livro
+     */
     public Livro(String titulo, String ISBN) {
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -25,35 +27,65 @@ public class Livro {
         autores = new Autor[5];
     }
 
+    /**
+     * getCapitulos
+     *
+     * @return capitulos Capitulo[] lista de capítulos
+     */
     public Capitulo[] getCapitulos() {
         return capitulos;
     }
 
+    /**
+     * setCapitulos
+     *
+     * @param capitulos Capitulo[] nova lista de capítulos
+     */
     public void setCapitulos(Capitulo[] capitulos) {
         this.capitulos = capitulos;
     }
 
+    /**
+     * getAutores
+     *
+     * @return autores Autor[] lista de autores do livro
+     */
     public Autor[] getAutores() {
         return autores;
     }
 
+    /**
+     * setAutores
+     *
+     * @param autores Autor[] nova lista de autores do livro
+     */
     public void setAutores(Autor[] autores) {
         this.autores = autores;
     }
 
+    /**
+     * getISBN
+     *
+     * @return ISBN String ISBN do livro
+     */
     public String getISBN() {
         return ISBN;
     }
 
+    /**
+     * setISBN
+     *
+     * @param ISBN String nova ISBN do livro
+     */
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
     /**
-     * Adiciona capítulo ao livro
+     * adicionarCapitulo adiciona capítulo do livro
      *
-     * @param titulo
-     * @param texto
+     * @param titulo String título do capítulo
+     * @param texto String texto do capítulo
      * @return a posição em que o capítulo foi inserido, ou -1 caso não tenha
      * sido inserido.
      */
@@ -69,8 +101,9 @@ public class Livro {
     }
 
     /**
+     * removerCapitulo remove capítulo do livro
      *
-     * @param cap
+     * @param cap Capitulo capítulo a ser removido
      * @return a posição do capítulo que foi removido, ou -1 caso não tenha sido
      * removido
      */
@@ -84,6 +117,13 @@ public class Livro {
         return -1;
     }
 
+    /**
+     * removerAutor remove autor do livro
+     *
+     * @param autor Autor autor a ser removido
+     * @return a posição do autor que foi removido, ou -1 caso não tenha sido
+     * removido
+     */
     public int removerAutor(Autor autor) {
         for (int i = 0; i < autores.length; i++) {
             if (autores[i].equals(autor)) {
@@ -94,8 +134,14 @@ public class Livro {
         return -1;
     }
 
+    /**
+     * adicionarAutor adiciona autor do livro
+     *
+     * @param autor Autor autor do capítulo
+     * @return a posição em que o autor foi inserido, ou -1 caso não tenha sido
+     * inserido.
+     */
     public int adicionarAutor(Autor autor) {
-
         for (int i = 0; i < autores.length; i++) {
             if (autores[i] == null) {
                 autores[i] = autor;
@@ -105,15 +151,30 @@ public class Livro {
         return -1;
     }
 
+    /**
+     * toString
+     *
+     * @return String objeto com título, autores e ISBN
+     */
     @Override
     public String toString() {
         return "Livro{" + "Título = " + titulo + ", autores=" + Arrays.toString(autores) + ", ISBN=" + ISBN + '}';
     }
 
+    /**
+     * getTitulo
+     *
+     * @return titulo String título do livro
+     */
     public String getTitulo() {
         return titulo;
     }
 
+    /**
+     * setTitulo
+     *
+     * @param titulo String novo título
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
